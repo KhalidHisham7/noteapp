@@ -103,7 +103,7 @@ if (!$result){
 
 //send the user an email with a link to activate.php with their email and activation code
 $message = "Please click on this link to activate your account:\n\n";
-$message .= "http://noteapp-com.stackstaging.com/activate.php?email=" . urlencode($email) . "&key = $activationkey";
+$message .= "http://localhost/activate.php?email=" . urlencode($email) . "&key = $activationkey";
 if (mail($email, 'Confirm your registration' , $message, 'From:'.'thetrio')){
     echo "<div class='alert alert-success'>Thank you for registering! A confirmation email has been sent to $email. Please click on the activation link to activate your account.</div>";
 }
