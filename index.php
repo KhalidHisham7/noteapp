@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <title>Notes App</title>
 
       <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
       <div class="navbar-collapse collapse" id="navbarCollapse">
 
           <ul class="nav navbar-nav">
-          
+
               <li class="active">
                 <a href="#">Home</a>
               </li>
@@ -55,11 +55,11 @@
       <h1>Online Notes App</h1>
     <p>Your Notes with you wherever you go.</p>
       <p>Easy to use, protects all your notes!</p>
-    
+
     <button type="button" class="btn btn-lg green signup" data-target="#signupModal" data-toggle="modal">Sign up- It's free</button>
-    
-    
-    
+
+
+
     <!--login form-->
     <form method="post" id="loginform">
         <div class="modal" id="loginModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -84,23 +84,26 @@
                       </div>
                       <div class="form-group">
                           <label for="loginpassword" class="sr-only">Password</label>
-                          <input class="form-control" type="password" name="loginpassword" id="loginpassword" placeholder="Password" maxlength="30">
+                          <input class="form-control" type="password" name="loginpassword"
+                          id="loginpassword" placeholder="Password" maxlength="30">
                       </div>
                       <div class="checkbox">
                       <label class="pull-left" style="color: black">
                           <input type="checkbox" name="rememberme" id="rememberme">Remember me
                       </label>
-                       <a class="pull-right" style="cursor:pointer" data-dismiss="modal" data-target="#forgotpasswordModal" data-toggle="modal">Forgot Password?</a>
+                       <a class="pull-right" style="cursor:pointer"
+                       data-dismiss="modal" data-target="#forgotpasswordModal" data-toggle="modal">Forgot Password?</a>
                   </div>
                   </div>
-                  
-                 
+
+
                   <div class="modal-footer">
                       <input class="btn green" name="login" type="submit" value="Login">
                     <button type="button" class="btn btn-default" data-dismiss="modal">
                       Cancel
                     </button>
-                      <button type="button" class="btn btn-default pull-left" data-dismiss="modal" data-target="signupModal" data-toggle="modal">
+                      <button type="button" class="btn btn-default pull-left"
+                      data-dismiss="modal" data-target="signupModal" data-toggle="modal">
                       Register
                     </button>
                   </div>
@@ -108,7 +111,7 @@
           </div>
           </div>
     </form>
-    
+
     <!--signup form-->
     <form method="post" id="signupform">
         <div class="modal" id="signupModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -119,7 +122,7 @@
                         &times;
                       </button>
                       <h4 id="myModalLabel" style="color: black">
-                        Sign up today and Start using our Online Notes App! 
+                        Sign up today and Start using our Online Notes App!
                       </h4>
                   </div>
                   <div class="modal-body">
@@ -154,9 +157,9 @@
           </div>
           </div>
     </form>
-    
+
     <!--forgot password-->
-    
+
     <form method="post" id="forgotpasswordform">
         <div class="modal" id="forgotpasswordModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -178,10 +181,10 @@
                           <label for="forgotemail" class="sr-only">Email:</label>
                           <input class="form-control" type="email" name="forgotemail" id="forgotemail" placeholder="Email" maxlength="50">
                       </div>
-                      
+
                   </div>
-                  
-                 
+
+
                   <div class="modal-footer">
                       <input class="btn green" name="forgotpassword" type="submit" value="submit">
                     <button type="button" class="btn btn-default" data-dismiss="modal">
@@ -195,10 +198,10 @@
           </div>
           </div>
     </form>
-    
-    
+
+
       </div>
-    
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

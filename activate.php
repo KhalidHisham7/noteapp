@@ -1,1 +1,6 @@
-//hell yeah!!!
+<?php
+session_start();
+include('connection.php');
+
+
+?>
