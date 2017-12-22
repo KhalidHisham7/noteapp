@@ -34,7 +34,7 @@ else{
 if(empty($_POST["password"])){
     $errors .= $missingPassword;
 }
-else if(!(strlen($_POST["password"])>6 and preg_match('/[A-Z]',$_POST["password"]) and preg_match('/[0-9]',$_POST["password"]))){
+else if(!(strlen($_POST["password"])>6 and preg_match('/[A-Z]/',$_POST["password"]) and preg_match('/[0-9]/',$_POST["password"]))){
     $errors .= $InvalidPassword;
 }
         else{
@@ -65,7 +65,7 @@ $password = md5($password);//hashed password
 
 $sql = "SELECT * FROM users WHERE user_name = '$username' ";
 $result = mysqli_query($link, $sql);
-if (!$results) {
+if (!$result) {
     echo '<div class="alert alert-danger">Error running the query</div>';
     exit;
 }
@@ -76,11 +76,10 @@ if ($results){
 
 //if email exists in the users table print an error
 
-$sql = "SELECT * FROM 'users' WHERE email = '$email' ";
+$sql = "SELECT * FROM users WHERE email = '$email'";
 $result = mysqli_query($link, $sql);
-if (!$results) {
-    echo '<div class="alert alert-danger">Error running the query</div>';
-    exit;
+if(!$result){
+    echo '<div class="alert alert-danger">Error running the second query!</div>'; exit;
 }
 $results = mysqli_num_rows($result);
 if ($results){
@@ -92,7 +91,7 @@ if ($results){
 $activationkey = bin2hex(openssl_random_pseudo_bytes(16));
 
 
-$sql = "INERT INTO users () VALUES (`username` , `email` , `password` , `activation`) VALUES (`$username` , `$email` , `$password` , `$activationkey`) ";
+$sql = "INSERT INTO users (`user_name` , `email` , `password` , `activation`) VALUES ('$username' , '$email' , '$password' , '$activationkey') ";
 
 $result = mysqli_query($link, $sql);
 if (!$result){
@@ -104,7 +103,7 @@ if (!$result){
 
 //send the user an email with a link to activate.php with their email and activation code
 $message = "Please click on this link to activate your account:\n\n";
-$message = "http://localhost/noteapp/activate.php?email=" . urlencode($email) . "&key = $activationkey";
+$message .= "http://noteapp-com.stackstaging.com/activate.php?email=" . urlencode($email) . "&key = $activationkey";
 if (mail($email, 'Confirm your registration' , $message, 'From:'.'thetrio')){
     echo "<div class='alert alert-success'>Thank you for registering! A confirmation email has been sent to $email. Please click on the activation link to activate your account.</div>";
 }
